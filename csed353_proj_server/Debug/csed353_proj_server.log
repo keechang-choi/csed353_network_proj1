@@ -1,3 +1,0 @@
-﻿  server.cpp
-C:\Users\rlckd\source\repos\csed353_proj\csed353_proj_server\server.cpp(16): warning C4101: 'file_list' :참조되지 않은 지역 변수입니다.
-  csed353_proj_server.vcxproj -> C:\Users\rlckd\source\repos\csed353_proj\Debug\csed353_proj_server.exe
