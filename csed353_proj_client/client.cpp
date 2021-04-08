@@ -2,18 +2,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <winsock2.h>
-#include <windows.h>
-#if defined(_WIN32)
-#define _CRT_SECURE_NO_WARNINGS
-#define WIN32_LEAN_AND_MEAN
 #pragma comment(lib, "Ws2_32.lib")
-#endif
+#include <string.h>
+
 
 #define PACKET_SIZE 1024
 
 using namespace std;
-
-#define BUF_SIZE 32
 
 int main(int argc, char* argv[])
 {
@@ -52,7 +47,7 @@ int main(int argc, char* argv[])
 	else {
 		if (strcmp(argv[1], "-t") == 0) {
 			send_case = 0;
-			strcpy_s(file_name, argv[2]);
+			strcpy(file_name, argv[2]);
 		}
 		else if (strcmp(argv[1], "-l") == 0) {
 			send_case = 1;
@@ -92,7 +87,7 @@ int main(int argc, char* argv[])
 			send(s, buf, sizeof(buf), 0);
 			char file_names[PACKET_SIZE];
 			recv(s, buf, PACKET_SIZE, 0);
-			strcpy_s(file_names, buf);
+			strcpy(file_names, buf);
 			cout << "file_list : " << file_names << endl;
 			break;
 		}

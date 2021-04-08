@@ -1,17 +1,11 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 #include <winsock2.h>
-#include <windows.h>
 #include <dirent.h>
-
 #include <iostream>
-#if defined(_WIN32)
-#define _CRT_SECURE_NO_WARNINGS
-#define WIN32_LEAN_AND_MEAN
 #pragma comment(lib, "Ws2_32.lib")
-#endif
-
 #include <tchar.h>
+#include <cstring>
 
 using namespace std;
 
@@ -64,7 +58,7 @@ int main(int argc, char* argv[]) {
         switch (rcv_case) {
             case (0):
                 recv(client_s, buf, PACKET_SIZE, 0);
-                strcpy_s(file_name, buf);
+                strcpy(file_name, buf);
                 FILE* fp;
 
                 temp_filename = folderPath + file_name;
