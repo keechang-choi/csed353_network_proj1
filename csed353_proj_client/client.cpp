@@ -6,7 +6,7 @@
 #include <string.h>
 
 
-#define PACKET_SIZE 1024
+#define PACKET_SIZE 128
 
 using namespace std;
 

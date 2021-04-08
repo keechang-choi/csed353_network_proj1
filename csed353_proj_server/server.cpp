@@ -9,7 +9,7 @@
 
 using namespace std;
 
-#define PACKET_SIZE 1024
+#define PACKET_SIZE 128
 #define FILE_MAX 64
 
 int main(int argc, char* argv[]) {
