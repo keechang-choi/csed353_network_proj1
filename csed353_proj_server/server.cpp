@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
 
                 temp_filename = folderPath + file_name;
                 fp = fopen(temp_filename.c_str(), "wb");  //파일열고
-                // recv(client_s, buf, PACKET_SIZE, 0); //파일사이즈받기
+                recv(client_s, buf, PACKET_SIZE, 0); //파일사이즈받기
                 file_size = atol(buf);  //char->long변환
                 totalBufferNum = file_size / PACKET_SIZE + 1;
                 //전체사이즈 = 파일전체사이즈 / 받고있는데이터
